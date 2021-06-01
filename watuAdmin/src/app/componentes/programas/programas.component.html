@@ -1,0 +1,332 @@
+<!-- ============================================================== -->
+<!-- Page wrapper  -->
+<!-- ============================================================== -->
+<div class="page-wrapper">
+  <!-- ============================================================== -->
+  <!-- Bread crumb and right sidebar toggle -->
+  <!-- ============================================================== -->
+  <div class="page-breadcrumb">
+    <div class="row align-items-center">
+      <div class="col-md-6 col-8 align-self-center">
+        <h3 class="page-title mb-0 p-0">Programas</h3>
+        <div class="d-flex align-items-center">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Programas
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <div class="col-md-6 col-4 align-self-center">
+        <div class="text-right upgrade-btn">
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#idModalAgregar"
+          >
+            Agregar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ============================================================== -->
+  <!-- End Bread crumb and right sidebar toggle -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- Container fluid  -->
+  <!-- ============================================================== -->
+  <div class="container-fluid">
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <div class="row">
+      <!-- column -->
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Tabla de Programas</h4>
+            <div class="table-responsive">
+              <table class="table user-table no-wrap">
+                <thead>
+                  <tr>
+                    <th class="border-top-0">#</th>
+                    <th class="border-top-0">Nombre</th>
+                    <th class="border-top-0">Vacantes</th>
+                    <th class="border-top-0">Agencia</th>
+                    <th class="border-top-0">Ver</th>
+                    <th class="border-top-0">Editar</th>
+                    <th class="border-top-0">Eliminar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of programs; let i = index">
+                    <td *ngIf="mostrarItem(item.agenciaId)">{{ i + 1 }}</td>
+                    <td *ngIf="mostrarItem(item.agenciaId)">
+                      {{ item.nombre_programa }}
+                    </td>
+                    <td *ngIf="mostrarItem(item.agenciaId)">
+                      {{ item.vacantes_disponibles }}
+                    </td>
+                    <td *ngIf="mostrarItem(item.agenciaId)">
+                      {{ item.agencia ? item.agencia.nombre_agencia : "" }}
+                    </td>
+                    <td *ngIf="mostrarItem(item.agenciaId)">
+                      <!-- Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-success"
+                        style="
+                          color: #000000;
+                          background-color: #dedede;
+                          border-color: #ffffff;
+                        "
+                        (click)="redirectDetailsProgram(item.id)"
+                      >
+                        <i class="fas fa-eye"></i>
+                      </button>
+                    </td>
+                    <td *ngIf="mostrarItem(item.agenciaId)">
+                      <!-- Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#idModalEditar"
+                        (click)="loadDataOneProgram(item.id)"
+                        style="background: yellow; border: yellow; color: black"
+                      >
+                        <i class="fas fa-pencil-alt"></i>
+                      </button>
+                    </td>
+                    <td *ngIf="mostrarItem(item.agenciaId)">
+                      <!-- Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn btn-danger"
+                        (click)="deleteOneProgram(item.id)"
+                      >
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Right sidebar -->
+    <!-- ============================================================== -->
+    <!-- .right-sidebar -->
+    <!-- ============================================================== -->
+    <!-- End Right sidebar -->
+    <!-- ============================================================== -->
+  </div>
+  <!-- ============================================================== -->
+  <!-- End Container fluid  -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- footer -->
+  <!-- ============================================================== -->
+  <footer class="footer text-center">
+    © 2020 Monster Admin by
+    <a href="https://www.wrappixel.com/">wrappixel.com</a>
+  </footer>
+  <!-- ============================================================== -->
+  <!-- End footer -->
+  <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Page wrapper  -->
+<!-- ============================================================== -->
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="idModalAgregar"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nuego Programa</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          X
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formNewProgram">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail1"
+              name="nombre"
+              aria-describedby="emailHelp"
+              formControlName="nombre_programa"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Descripcion</label
+            >
+            <textarea
+              type="text"
+              name="descripcion"
+              class="form-control"
+              id="exampleInputPassword1"
+              formControlName="descripcion_programa"
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Numero Vacantes</label
+            >
+            <input
+              type="number"
+              name="vacantes"
+              class="form-control"
+              id="exampleInputPassword1"
+              formControlName="vacantes_disponibles"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Agencias</label
+            >
+            <select
+              class="form-control"
+              name="agencias"
+              aria-label="Default select example"
+              formControlName="agencia"
+            >
+              <option *ngFor="let item of agencies" [value]="item.id">
+                {{ item.nombre_agencia }}
+              </option>
+            </select>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button
+              (click)="saveOneProgram()"
+              [disabled]="!formNewProgram.valid"
+              type="submit"
+              class="btn btn-primary"
+            >
+              Guardar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="idModalEditar"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Programa</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          X
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formEditProgram">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail1"
+              name="nombre"
+              aria-describedby="emailHelp"
+              formControlName="nombre_programa"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Descripcion</label
+            >
+            <textarea
+              type="text"
+              name="descripcion"
+              class="form-control"
+              id="exampleInputPassword1"
+              formControlName="descripcion_programa"
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Numero Vacantes</label
+            >
+            <input
+              type="number"
+              name="vacantes"
+              class="form-control"
+              id="exampleInputPassword1"
+              formControlName="vacantes_disponibles"
+            />
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              id="btn_editar_cerrar_modal"
+            >
+              Cancelar
+            </button>
+            <button
+              (click)="editOneProgram()"
+              [disabled]="!formEditProgram.valid"
+              type="submit"
+              class="btn btn-primary"
+            >
+              Actualizar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,132 @@
+<sb-layout-auth>
+    <div class="signup">
+        <div class="signup-content">
+          <div class="signup-content__main">
+            <div class="signup-content__main__left">
+                <div class="signup-content__main__left__container">
+                  <h1>Registro</h1>
+                </div>
+             </div>
+            <div class="signup-content__main__right">
+              <div class="signup-content__main__right__container" >
+                <div
+                  class="signup-content__main__right__container__sign-in"
+                >
+                  <div
+                    class="signup-content__main__right__container__sign-in__container"
+                    [formGroup]="signupForm"
+                  >
+                    <!-- <div
+                      class="signup-content__main__right__container__sign-in__container__title"
+                    >
+                      <img src="assets/icons/registro.svg" alt="">
+                    </div> -->
+                    
+                    <div
+                      class="signup-content__main__right__container__sign-in__container__input"
+                    >
+                    <input
+                    matInput
+                    placeholder="Nombres"
+                    resizeToFitContent="true"
+                    style="margin-bottom: 15px;"
+                    formControlName="names"
+                  />
+                        <div 
+                            class="signup-content__main__right__container__sign-in__container__input__names">
+                            <input
+                            matInput
+                            placeholder="Primer apellido"
+                            resizeToFitContent="true"
+                            style="width: 220px;"
+                            formControlName="firstLastName"
+                          />
+        
+                          <input
+                            matInput
+                            placeholder="Segundo apellido"
+                            resizeToFitContent="true"
+                            style="width: 220px;"
+                            formControlName="secondLastName"
+
+                          />
+        
+                        </div>
+
+                        <div class="signup-content__main__right__container__sign-in__container__input__email">
+                            <input
+                            matInput
+                            placeholder="Correo"
+                            resizeToFitContent="true"
+                            style="margin-top: 20px;"
+                            formControlName="email"
+                          />
+                        </div>
+                      
+                        <div class="signup-content__main__right__container__sign-in__container__input__password">
+                            
+                      <input
+                      matInput
+                      placeholder="Contraseña"
+                      resizeToFitContent="true"
+                      style="margin-top: 20px;"
+                      formControlName="password"
+                      type="password"
+                      />
+                        </div>
+
+                        <div class="signup-content__main__right__container__sign-in__container__input__repeat-password">
+                          <input
+                          matInput
+                          placeholder="Repetir contraseña"
+                          resizeToFitContent="true"
+                          style="margin-top: 20px;"
+                          formControlName="repeatPassword"
+                          type="password"
+                        />
+                      </div>
+
+
+                      <div class="signup-content__main__right__container__sign-in__container__input__repeat-password">
+                        <input
+                        matInput
+                        placeholder="Numero de cuenta"
+                        resizeToFitContent="true"
+                        style="margin-top: 20px;"
+                        formControlName="nroCuenta"
+                      />
+                    </div>
+
+               
+
+                    </div>
+                    
+                    <div class="signup__form__error-password">
+                        <span
+                          *ngIf="this.signupForm.get('repeatPassword')?.hasError('mismatch')"
+                          style="color: red; font-weight: 700; font-size: 12px"
+                        >
+                          Las contraseñas no coinciden
+                        </span>
+                      </div>
+                    <div
+                    class="signup-content__main__right__container__sign-in__container__button"
+                    >
+                        <div class="signup-content__main__right__container__sign-in__container__button__signup"
+                        (click)="signup()">
+                            <span>Registrate</span>
+                        </div>
+                    </div>
+                   
+                  </div>
+                </div>
+                
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    
+</sb-layout-auth>

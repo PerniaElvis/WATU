@@ -1,0 +1,43 @@
+<sb-layout-blog
+    ><sb-clean-blog-header backgroundImage='url("assets/img/home.jpg")' heading="WATu: Tu buscador de Agencias " subHeading="Encuentra toda la información de agencias de Work An Travel en un solo sitio" [siteHeading]="true"></sb-clean-blog-header><sb-demo-info *ngIf="!isLoggedIn"></sb-demo-info
+    ><ng-container
+        ><div class="container">
+            <div class="mb-5">
+                <h1>Agencias disponibles</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4"  *ngFor="let agency of (agencies$ |async)">
+
+                    <div class="post-preview">
+                        <img
+                            style="width: 100%;height: 200px;"
+                        [src]="agency.image" alt="imagen de la agencia">
+                        <a [routerLink]=""
+                            ><h2 class="post-title" style="height: 75px;display: flex;align-items: center;justify-content: center;">
+                                {{agency.nombre_agencia}}</h2>
+                            <p class="post-subtitle">{{agency.acronimo_agencia}}</p></a
+                        >
+                        <p class="post-meta">{{agency.direccion_agencia}}</p>
+                        <button class="btn btn-success" (click)="seeMore(agency.id,agency.nombre_agencia)">Ver detalle</button>
+                    </div>
+                </div>
+            </div>
+        </div></ng-container>
+
+    
+
+    <div class="meeti-bg">
+        <div class="contenedor meeti grid columnas-md-2">
+            <section>
+                <h3>Busca una Agencia</h3>
+                <p> Conoce todas las ofertas de las agencias de intercabio cultural. 
+                    ¿Qué esperas para cumplir tus sueños y conocer E.E.U.U?</p>
+            </section>
+            <section>
+                <h3>Reserva tu Vacante</h3>
+                <p>Ya sabes a que agencia postular, entonces que esperas, reserva tu vacante Ya! Y n pierdas tu oportunidad de ir a E.E.U.U</p>
+            </section>
+        </div>
+    </div>
+    
+    </sb-layout-blog>

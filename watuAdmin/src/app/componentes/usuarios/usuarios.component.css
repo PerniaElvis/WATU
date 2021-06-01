@@ -1,0 +1,16 @@
+.btn_estado {
+  text-align: center;
+  padding: 0px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn_activo {
+  background: #55ce63;
+  color: white;
+}
+
+.btn_desactivo {
+  background: #6c757d;
+  color: white;
+}

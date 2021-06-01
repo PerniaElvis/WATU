@@ -1,0 +1,106 @@
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row align-items-center">
+            <div class="col-md-6 col-8 align-self-center">
+                <h3 class="page-title mb-0 p-0">Agencias</h3>
+                <div class="d-flex align-items-center">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Agencias</a></li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- ============================================================== -->
+        <!-- Table -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <h4 class="card-title col-md-10 mb-md-0 mb-3">Lista de Agencias</h4>
+                            <button (click)="btnAgregar()"  class="btn btn-primary btn-round pull-right" style="padding:10px">
+                                Agregar nueva Agencia
+                                <i class="fas fa-plus-circle"></i>
+                              </button>
+                        </div>
+                        <div class="table-responsive m-t-40">
+                            <table class="table stylish-table no-wrap">
+                                <thead>
+                                    <tr>
+                                        <th class="border-top-0" colspan="2">Nombre</th>
+                                        <th class="border-top-0">Programas</th>
+                                        <th class="border-top-0">Dirección</th>
+                                        <th class="border-top-0">Página Web</th>
+                                        <th class="border-top-0">Estado</th>
+                                        <th class="border-top-0"></th>
+                                        <th class="border-top-0"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr   *ngFor="let agencia of agencias; index as i">
+                                        <td><span class="round"><img [src]="agencia.image"
+                                                    alt="user" width="50"></span></td>
+                                        <td>
+                                            <h6>{{agencia.nombre_agencia}}</h6><small class="text-muted">{{agencia.acronimo_agencia}}</small>
+                                        </td>
+                                        <td>
+                                            <button  class="btn btn-info btn-round btn-just-icon" (click)="btnProgramas(agencia.id)">
+                                                <i class="fas fa-tasks"></i>
+                                            </button>
+                                        </td>
+                                        <td>
+                                           {{agencia.direccion_agencia}} 
+                                        </td>
+                                        <td>
+                                            <a href="https://peru.workuse.com/"> 
+                                                {{agencia.url}}                                                
+                                            </a>
+                                        </td>
+                                        
+                                        <td >
+                                            <button  class="btn btn-round btn-just-icon" (click)="btnCambiarEstado(agencia)" [ngClass]="{'btn-light': agencia.estado == 1, 'btn-dark': agencia.estado != 1}">
+                                                <i  * ngIf = " agencia.estado  == 0 " class="fas fa-toggle-on" > </i >
+                                                <i  * ngIf = " agencia.estado == 1 " class="fas fa-toggle-off" > </i >
+                                                <i class="fas fa-toggle-on"></i>
+                                            </button >
+                                         </td>
+                                        <td>
+                                            <button (click)="btnVerDetalle(agencia.id)"  class="btn btn-dark btn-round btn-just-icon">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-warning btn-round btn-just-icon" (click)="btnEditar(agencia.id)">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                          </td>
+                                    </tr>
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    <footer class="footer text-center">
+        © 2021 FISI - TEAM WATu <a href="#">WATu.com</a>
+    </footer>
+    <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
+</div>

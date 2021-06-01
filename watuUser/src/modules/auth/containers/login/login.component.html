@@ -1,0 +1,94 @@
+
+<sb-layout-auth>
+    <div class="login">
+        <div class="login-content">
+          <div class="login-content__main">
+            <div class="login-content__main__left">
+                <div class="login-content__main__left__container">
+                  <h1>Watu</h1>
+                </div>
+             </div>
+            <div class="login-content__main__right">
+              <div class="login-content__main__right__container" >
+                <div class="login-content__main__right__container__logo" (click)="toSignup()">
+                  <!-- <img src="assets/img/login-web-left.svg" alt="" /> -->
+                  <span>Crear cuenta</span>
+                </div>
+                <div
+                  class="login-content__main__right__container__sign-in"
+                  [formGroup]="loginForm"
+                >
+                  <div
+                    class="login-content__main__right__container__sign-in__container"
+                  >
+                    <div
+                      class="login-content__main__right__container__sign-in__container__title"
+                      >
+                      <h1>Iniciar Sesión</h1>
+                      <label>Seleccione e ingrese sus datos</label>
+                    </div>
+                    
+                    <div
+                      class="login-content__main__right__container__sign-in__container__input"
+                    >
+                    <input
+                    matInput
+                    placeholder="Email"
+                    type="email"
+                    formControlName="email"
+                    resizeToFitContent="true"
+                  />
+
+                  <input
+                  matInput
+                  type="password"
+                  placeholder="Password"
+                  formControlName="password"
+                  resizeToFitContent="true"
+                  style="margin: 20px 0;"
+                />
+
+                <div 
+                class="login-content__main__right__container__sign-in__container__recover-password"
+                (click)="toRecoveryPassword()"
+                >
+                  <span>Recuperar contraseña</span>
+                
+                </div>
+                    </div>
+  
+                    <div
+                      class="login-content__main__right__container__sign-in__container__button"
+                    >
+                      <div
+                        class="login-content__main__right__container__sign-in__container__button__continue"
+                        (click)="onSubmit()"
+
+                        >
+                        <label>INICIAR SESIÓN</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="login-content__main__right__container__media">
+
+                  <div class="login-content__main__right__container__media__google">
+                    <img src="/assets/img/google.svg" />
+                    <label>Iniciar con Google</label>
+                  </div>
+
+                  <div class="login-content__main__right__container__media__facebook">
+                    <img src="/assets/img/Facebook.svg" />
+                    <label>Iniciar con Facebook</label>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    
+</sb-layout-auth>

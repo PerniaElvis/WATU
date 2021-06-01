@@ -1,0 +1,22 @@
+<sb-layout-blog><sb-clean-blog-header backgroundImage='url("assets/img/about-bg.jpg")' heading="Encuentra tu agencia ya!" subHeading="Con nuestro buscador de agencias de intercambio cultural" [siteHeading]="true"></sb-clean-blog-header>
+        
+    <div class="buscador-inicio">
+        <div class="contenedor">
+            <h2>Busca tu agencias de intercambio cultural</h2>
+            <form action="#">
+                <select name="categoria">
+                    <option value="" disabled selected>-- Selecciona el Programa --</option>
+                    <option value="programacion">WORK AND TRAVEL USA</option>
+                    <option value="diseno">INTERNSHIP USA</option>
+                    <option value="libros">TRAINEE</option>
+                    <option value="libros">USE LEARNING</option>
+                </select>
+                <input type="text" name="nombre" placeholder="Nombre de la Agencia">
+                <input type="text" name="estado" placeholder="Estado">
+                <input type="text" name="precio" placeholder="Precio">
+                <input type="submit" value="Buscar" class="btn btn-azul2">
+            </form>
+        </div>
+    </div>
+
+</sb-layout-blog>

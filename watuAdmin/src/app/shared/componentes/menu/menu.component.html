@@ -1,0 +1,153 @@
+<header class="topbar" data-navbarbg="skin6">
+  <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+    <div class="navbar-header" data-logobg="skin6">
+      <!-- ============================================================== -->
+      <!-- Logo -->
+      <!-- ============================================================== -->
+      <a class="navbar-brand justify-content-center" href="index.html">
+        <!-- Logo icon -->
+        <b class="logo-icon">
+          <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+          <!-- Dark Logo icon -->
+        </b>
+        <!--End Logo icon -->
+        <!-- Logo text -->
+        <span class="logo-text">
+          <!-- dark Logo text -->
+          <p
+            style="
+              font-size: 28px;
+              color: #38a2ce;
+              font-weight: bold;
+              letter-spacing: 1px;
+            "
+          >
+            WatuAdmin
+          </p>
+        </span>
+      </a>
+      <!-- ============================================================== -->
+      <!-- End Logo -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- toggle and nav items -->
+      <!-- ============================================================== -->
+      <a
+        class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
+        href="javascript:void(0)"
+        ><i class="ti-menu ti-close"></i
+      ></a>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Logo -->
+    <!-- ============================================================== -->
+    <div
+      class="navbar-collapse collapse"
+      id="navbarSupportedContent"
+      data-navbarbg="skin5"
+    >
+      <ul class="navbar-nav d-none d-md-block d-lg-none">
+        <li class="nav-item">
+          <a
+            class="nav-toggler nav-link waves-effect waves-light text-white"
+            href="javascript:void(0)"
+            ><i class="ti-menu ti-close"></i
+          ></a>
+        </li>
+      </ul>
+      <!-- ============================================================== -->
+      <!-- toggle and nav items -->
+      <!-- ============================================================== -->
+      <ul class="navbar-nav mr-auto mt-md-0">
+        <!-- ============================================================== -->
+        <!-- Search -->
+        <!-- ============================================================== -->
+
+        <li class="nav-item hidden-sm-down">
+          <form class="app-search pl-3">
+            <input type="text" class="form-control" placeholder="Buscar..." />
+            <a class="srh-btn"><i class="ti-search"></i></a>
+          </form>
+        </li>
+      </ul>
+
+      <!-- ============================================================== -->
+      <!-- Right side toggle and nav items -->
+      <!-- ============================================================== -->
+      <ul class="navbar-nav">
+        <!-- ============================================================== -->
+        <!-- User profile and search -->
+        <!-- ============================================================== -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle waves-effect waves-dark"
+            href=""
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            ><img
+              src="../assets/images/users/3.jpg"
+              alt="user"
+              class="profile-pic mr-2"
+            />Administrador
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<aside class="left-sidebar" data-sidebarbg="skin6">
+  <!-- Sidebar scroll-->
+  <div class="scroll-sidebar">
+    <!-- Sidebar navigation-->
+    <nav class="sidebar-nav">
+      <ul id="sidebarnav">
+        <!-- User Profile-->
+        <li class="sidebar-item">
+          <a
+            class="sidebar-link waves-effect waves-dark sidebar-link"
+            href="index.html"
+            (click)="redirectPage('/')"
+            aria-expanded="false"
+            ><i class="mr-3 far fa-clock fa-fw" aria-hidden="true"></i
+            ><span class="hide-menu">Inicio</span></a
+          >
+        </li>
+        <li class="sidebar-item">
+          <a
+            class="sidebar-link waves-effect waves-dark sidebar-link"
+            href="pages-profile.html"
+            aria-expanded="false"
+            (click)="redirectPage('/users')"
+          >
+            <i class="mr-3 fa fa-user" aria-hidden="true"></i
+            ><span class="hide-menu">Usuarios</span></a
+          >
+        </li>
+        <li class="sidebar-item">
+          <a
+            class="sidebar-link waves-effect waves-dark sidebar-link"
+            href="/agencias"
+            (click)="redirectPage('/agencias')"
+            aria-expanded="false"
+            ><i class="mr-3 fa fa-table" aria-hidden="true"></i
+            ><span class="hide-menu">Agencias</span></a
+          >
+        </li>
+        <li class="sidebar-item">
+          <a
+            class="sidebar-link waves-effect waves-dark sidebar-link"
+            href="icon-fontawesome.html"
+            aria-expanded="false"
+            (click)="redirectPage('/programs/0')"
+            ><i class="mr-3 fa fa-font" aria-hidden="true"></i
+            ><span class="hide-menu">Programas</span></a
+          >
+        </li>
+      </ul>
+    </nav>
+    <!-- End Sidebar navigation -->
+  </div>
+  <!-- End Sidebar scroll-->
+</aside>

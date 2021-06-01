@@ -1,0 +1,100 @@
+<div class="page-wrapper">
+  <!-- ============================================================== -->
+  <!-- Bread crumb and right sidebar toggle -->
+  <!-- ============================================================== -->
+  <div class="page-breadcrumb">
+    <div class="row align-items-center">
+        <div class="col-md-6 col-8 align-self-center">
+            <h3 class="page-title mb-0 p-0">Agencias</h3>
+            <div class="d-flex align-items-center">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="agencias/">Agencias</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Agregar</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+  </div>
+ 
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header bg-info text-white">
+            <h4 class="card-title">Agregar Agencia</h4>
+            <p class="card-category">Ingrese los datos principales de la agencia</p>
+          </div>
+          <div class="card-body">
+            <form (ngSubmit)="btnAgregarAgencia()">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group bmd-form-group">
+                    <input type="text" class="form-control" [(ngModel)]="nombre_agencia" name="nombreAgencia" required placeholder="Nombre de la agencia">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group bmd-form-group">
+                    <input type="text" class="form-control" [(ngModel)]="acronimo_agencia" name="acronimoAgencia" required placeholder="Acronimo de la agencia">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group bmd-form-group">
+                    <input type="text" class="form-control" [(ngModel)]="pagina_agencia" name="paginaAgencia" required placeholder="Página Web de la agencia">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group bmd-form-group">
+                    <input ngx-google-places-autocomplete   #placesRef="ngx-places" type="text" class="form-control" [(ngModel)]="direccion_agencia" name="direccionAgencia" (onAddressChange)="handleAddressChange($event)"/>
+                    
+                  </div>
+                </div>                
+                <div class="col-md-12">
+                  <div class="form-group bmd-form-group">
+                    <label for="formFile" class="form-label">Suba el logo de la Agencia</label>
+                    <input #file name="imageAgencia" class="form-control" type="file" id="formFile" (change)="preview(file.files)">
+                  </div>                  
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group bmd-form-group">
+                    <textarea  [(ngModel)]="descripcion_agencia" name="descripcionAgencia" class="form-control" placeholder="Ingrese la descripción de la agencia" id="floatingTextarea2" style="height: 350px"></textarea>
+                  </div>
+                 
+                </div>
+                
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-2">
+                  <button type="submit" class="btn btn-info btn-lg">
+                    Agregar Agencia
+                  </button>
+                </div>
+                <div class="col-2">
+                  <button type="button" class="btn btn-info btn-lg"  (click)="btnCancelar()" >
+                    Cancelar
+                  </button>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <!-- End Container fluid  -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- footer -->
+  <!-- ============================================================== -->
+  <footer class="footer text-center">
+      © 2021 FISI - TEAM WATu <a href="#">WATu.com</a>
+  </footer>
+  <!-- ============================================================== -->
+  <!-- End footer -->
+  <!-- ============================================================== -->
+
+</div>

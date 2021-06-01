@@ -1,0 +1,181 @@
+.signup {
+    width: 100%;
+    min-height: 100vh;
+    @media only screen and (min-width: 1500px) {
+      padding: 50px 0;
+    }
+    background:url('../../../../assets/img/login.jpg');
+    padding: 30px 0;
+    .signup-content {
+      max-width: 90%;
+  
+      margin: 0 auto;
+      &__main {
+        display: flex;
+        background: #ffffff;
+        min-height: 90vh;
+        &__left {
+  
+          background:url('../../../../assets/img/login.jpg');
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+  
+          &__container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #ffffff;
+            h1,p{
+              margin: 0;
+            }
+          }
+        }
+        &__right {
+          width: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &__container {
+            //width: 75%;
+            height: 70%;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            &__logo {
+              display: flex;
+              justify-content: flex-start;
+              cursor: pointer;
+              span{
+                font-weight: 400;
+                opacity: 0.4;
+              }
+              margin: 20px 0;
+              img {
+                width: 180px;
+              }
+            }
+           
+            &__sign-in {
+              background: #ffffff 0% 0% no-repeat padding-box;
+              opacity: 1;
+              &__container {
+                @media only screen and (min-width: 1500px) {
+                  height: 350px;
+                }
+                height: 265px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+  
+                &__title {
+                    
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  margin-bottom:10px;
+                  h1 {
+                    margin: 0;
+                    @media only screen and (min-width: 1500px) {
+                      font-size: 26px;
+                    }
+                    font-size: 22px;
+                    font-weight: 400;
+                    color: gray;
+                  }
+                  label {
+                    @media only screen and (min-width: 1500px) {
+                      font-size: 22px;
+                    }
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: gray;
+                  }
+                }
+                
+                &__option,
+                &__input {
+                  margin: 5px;
+                  &__names{
+                      display: flex;
+                      justify-content: space-between;
+                  }
+                  
+                }
+                &__option {
+                  width: 250px;
+                  margin: 30px 8px 8px 8px;
+                  display: flex;
+                  justify-content: space-around;
+                  align-items: center;
+  
+                  &__one,
+                  &__two {
+                    label {
+                      display: flex;
+                      span {
+                        @media only screen and (min-width: 1500px) {
+                          font-size: 16px;
+                        }
+                        font-size: 12px;
+                      }
+                    }
+                  }
+                }
+                &__input {
+                  font-size: 10px;
+                  width: 100%;
+                  input{
+                    height: 35px;
+                    width: 100%;
+                    padding: 10px;
+                    border: none;
+                    box-shadow: 0px 1px 6px #00000016;
+                    //border: 1.5px solid #c44fe7;
+                  }
+                  span{
+                    font-weight: 400;
+                    opacity: 0.5;
+                    font-size: 12px;
+                  }
+                }
+             
+                &__button {
+                  margin-top: 20px;
+                  &__signup {
+                    background: #2c9afb 0% 0% no-repeat padding-box;
+                    border-radius: 4px;
+                    opacity: 1;
+                    padding: 5px 20px;
+                    cursor: pointer;
+                    span {
+                      font-size: 18px;
+                      color: #ffffff;
+                      cursor: pointer;
+                    }
+                  }
+                }
+              }
+  
+             
+            }
+          }        
+        }
+      }
+    }
+    ::ng-deep .mat-form-field-wrapper {
+      width: 250px;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  
+  ::placeholder{
+    color: #cccaca;
+    font-size: 12px;
+  }
+  

@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" routerLink="/">WATu</a><button class="navbar-toggler navbar-toggler-right" type="button" (click)="isMenuCollapsed = !isMenuCollapsed" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><fa-icon class="ml-1" [icon]='["fas", "bars"]'></fa-icon></button>
+        <div class="collapse navbar-collapse" [ngbCollapse]="isMenuCollapsed">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/about">Busqueda de Agencias  <fa-icon [icon]='["fas", "search"]'></fa-icon></a></li>
+                <li class="nav-item" *ngIf="isLogged();" style="display: flex;">
+                    <!-- <a class="nav-link icon" href="https://github.com/StartBootstrap/sb-clean-blog-angular" target="_blank"><fa-icon [icon]='["fas", "user"]'></fa-icon></a> -->
+                    <span (click)="logout()" style="color: #fff; cursor: pointer;">Cerrar Sesión</span>
+                </li>
+
+                <li class="nav-item" *ngIf="isLoggedIn &amp;&amp; isOnPost"><a class="nav-link pointer" (click)="editPost()">Edit Post</a></li>
+            </ul>
+            <form class="form-inline ml-lg-2" *ngIf="isLoggedIn"><a class="btn btn-primary" routerLink="/new">New Post</a></form>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,48 @@
+<sb-layout-blog
+    ><sb-clean-blog-header backgroundImage='url("assets/img/home.jpg")' 
+    [heading]="nameAgency " subHeading="Encuentra toda la información de agencias de Work An Travel en un solo sitio" 
+    [siteHeading]="true"></sb-clean-blog-header>
+    
+<h1 class="mb-4">Mis programas</h1>
+<ng-container *ngIf="program|async as Programs">
+    <table class="table" style="width: 90%;margin: 0 auto;">
+        <thead>
+          <tr>
+            <th scope="col" style="width: 300px;">Programa</th>
+            <th scope="col"  style="width: 300px;">Nro de vacantes</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Ver requisitos</th>
+            <th scope="col">Inscribirse</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let progr of Programs">
+
+
+            <th >{{progr.nombre_programa}}</th>
+            <td>{{progr.vacantes_disponibles}}</td>
+            <td>{{progr.descripcion_programa}}</td>
+            <td>
+              <button class="btn btn-success" (click)="showRequiremnts(progr)">Ver requisitos</button>
+            </td>
+            <td>
+              <button class="btn btn-primary">Iniciar Inscripción</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <ng-container *ngIf="mostrarRequisitos">
+        <h1 class="mt-5">Requisitos</h1>
+        <div class="container">
+          <ul *ngFor="let item of requirements|async">
+            <li>
+              {{item.descripcion_requisito}}
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+     
+</ng-container><sb-demo-info ></sb-demo-info>
+</sb-layout-blog>
+

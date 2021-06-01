@@ -1,0 +1,94 @@
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+      <div class="row align-items-center">
+          <div class="col-md-6 col-8 align-self-center">
+              <h3 class="page-title mb-0 p-0">Agencias</h3>
+              <div class="d-flex align-items-center">
+                  <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="agencias/">Agencias</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">Ver</li>
+                      </ol>
+                  </nav>
+              </div>
+          </div>
+      </div>
+    </div>
+   
+  
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header bg-info text-white">
+              <h4 class="card-title">Datos de la Agencia</h4>
+              <p class="card-category">Visualiza los datos de la agencia</p>
+            </div>
+            <div class="card-body">
+              <form >
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group bmd-form-group">
+                      <img class="img-fluid rounded d-block m-l-none" [src]=" image_agencia" alt="Slogan" width="650">
+                    </div>
+                  </div>              
+                  <div class="col-md-6">
+                    <div class="form-group bmd-form-group">
+                      <label for="formFile" class="form-label">Nombre de la Agencia:</label>
+                      <input type="text" class="form-control" [(ngModel)]="nombre_agencia" name="nombreAgencia" readonly>
+                    </div>
+                    <div class="form-group bmd-form-group">
+                      <label for="formFile" class="form-label">Acronimo de la Agencia:</label>
+                      <input type="text" class="form-control" [(ngModel)]="acronimo_agencia" name="acronimoAgencia" readonly >
+                    </div>
+                    <div class="form-group bmd-form-group">
+                      <label for="formFile" class="form-label">Web de la Agencia:</label>
+                      <input type="text" class="form-control" [(ngModel)]="pagina_agencia" name="paginaAgencia" readonly>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group bmd-form-group">
+                      <label for="formFile" class="form-label">Direccion de la Agencia:</label>
+                      <input type="text"class="form-control" [(ngModel)]="direccion_agencia" name="direccionAgencia" readonly>
+                    </div>
+                  </div>                
+                  <div class="col-md-12">
+                    <div class="form-group bmd-form-group">
+                      <label for="formFile" class="form-label">Descripción de la Agencia:</label>
+                      <textarea  [(ngModel)]="descripcion_agencia" name="descripcionAgencia" class="form-control"  id="floatingTextarea2" style="height: 350px" readonly></textarea>
+                    </div>
+                   
+                  </div>
+                  
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-2">
+                    <button type="button" class="btn btn-info btn-lg"  (click)="btnCancelar()" >
+                      Regresar
+                    </button>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    <footer class="footer text-center">
+        © 2021 FISI - TEAM WATu <a href="#">WATu.com</a>
+    </footer>
+    <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
+  
+  </div>
